@@ -40,7 +40,7 @@
    ============================================================ */
 
 .guide-mock {
-  margin: 20px 0 24px;
+  margin: 30px 0 24px;
   padding: 24px;
   background: linear-gradient(135deg, #F8FAFC, #EFF6FF);
   border: 1px dashed var(--primary-lighter);
@@ -53,14 +53,17 @@
 .guide-mock::after {
   content: 'تصميم توضيحي';
   position: absolute;
-  top: 8px;
-  left: 12px;
+  top: -11px;
+  left: 16px;
+  background: white;
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--primary-lighter);
   font-size: 10px;
-  font-weight: 700;
-  color: var(--text-dim);
+  font-weight: 800;
+  color: var(--primary);
   letter-spacing: 0.5px;
-  text-transform: uppercase;
-  opacity: 0.6;
+  line-height: 1.4;
 }
 
 /* ============================================================
