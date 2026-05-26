@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1E40AF">
+  <title>نَسَق — مُنسّق الويب | غيّر مظهر أي موقع بضغطة زر</title>
+  <meta name="description" content="نَسَق إضافة Chrome احترافية لتعديل خطوط أي موقع وألوانه ومظهره. ثلاثة خطوط عربية مدمجة، محرّر CSS كامل، لوحة جانبية أنيقة. خصوصية كاملة، مفتوحة المصدر.">
+  <meta name="keywords" content="نَسَق, Nasaq, إضافة كروم, تعديل خطوط, تخصيص مواقع, خطوط عربية, RTL, CSS editor">
+  <meta property="og:title" content="نَسَق — مُنسّق الويب">
+  <meta property="og:description" content="غيّر خطوط وألوان أي موقع بضغطة زر. خصوصية كاملة.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <link rel="icon" type="image/png" href="../extension/icons/icon128.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background animated grid -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="nav">
+    <a href="#top" class="nav-brand">
+      <span class="nav-logo">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <defs>
+            <linearGradient id="navLogoG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3B82F6"/>
+              <stop offset="100%" stop-color="#1E3A8A"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="8" fill="url(#navLogoG)"/>
+          <circle cx="16" cy="9" r="2.2" fill="#FFFFFF"/>
+          <path d="M8 14 Q8 24 16 24 Q24 24 24 14" stroke="#FFFFFF" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="nav-brand-text">نَسَق</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">المميزات</a>
+      <a href="#how">كيف تستخدمها</a>
+      <a href="#screenshots">لقطات</a>
+      <a href="#privacy">الخصوصية</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#install" class="btn btn-primary btn-sm">
+        ثبّت الآن
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========== Hero ========== -->
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <div class="hero-text reveal" data-reveal>
+        <span class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          مفتوحة المصدر · Manifest V3 · خصوصية كاملة
+        </span>
+        <h1 class="hero-title">
+          <span class="title-line">غيّر مظهر</span>
+          <span class="title-line">
+            <span class="gradient-text">أي موقع</span>
+          </span>
+          <span class="title-line">بضغطة زر</span>
+        </h1>
+        <p class="hero-sub">
+          إضافة Chrome احترافية لتعديل خطوط أي موقع وألوانه ومظهره عبر لوحة جانبية أنيقة.
+          <br>
+          ثلاثة خطوط عربية مدمجة، محرّر CSS كامل، تخزين محلي بنسبة 100%.
+        </p>
+        <div class="hero-actions">
+          <a href="#install" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            ثبّت نَسَق على Chrome
+          </a>
+          <a href="https://github.com" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            الكود على GitHub
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="3">0</span>
+            <span class="stat-label">خطوط عربية مدمجة</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="100" data-suffix="%">0%</span>
+            <span class="stat-label">خصوصية محلية</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="0" data-suffix=" KB">0 KB</span>
+            <span class="stat-label">تتبّع وتحليلات</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockup للوحة الجانبية -->
+      <div class="hero-mockup reveal" data-reveal data-reveal-delay="200">
+        <div class="mockup-window">
+          <div class="mockup-topbar">
+            <span class="mockup-dot mockup-dot-red"></span>
+            <span class="mockup-dot mockup-dot-yellow"></span>
+            <span class="mockup-dot mockup-dot-green"></span>
+            <span class="mockup-url">نَسَق — مُنسّق الويب</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-sidepanel">
+              <div class="mp-header">
+                <div class="mp-brand">
+                  <div class="mp-logo"></div>
+                  <span class="mp-title">نَسَق</span>
+                </div>
+                <div class="mp-actions">
+                  <div class="mp-site-chip">
+                    <span class="mp-favicon"></span>
+                    <span class="mp-host">example.com</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mp-enable">
+                <span class="mp-enable-text">تفعيل على هذا الموقع</span>
+                <span class="mp-switch"><span class="mp-switch-knob"></span></span>
+              </div>
+              <div class="mp-selector">
+                <div class="mp-picker"></div>
+                <div class="mp-input">html, body, body *</div>
+              </div>
+              <div class="mp-field">
+                <span class="mp-label">نوع الخط</span>
+                <div class="mp-select"><span class="mp-typing"></span></div>
+              </div>
+              <div class="mp-field">
+                <span class="mp-label">الحجم</span>
+                <div class="mp-select mp-select-small">20</div>
+                <span class="mp-label">الارتفاع</span>
+                <div class="mp-select mp-select-small">1.8</div>
+              </div>
+              <div class="mp-direction">
+                <span class="mp-dir-label">🎯 اتجاه الموقع</span>
+                <div class="mp-dir-btns">
+                  <span class="mp-dir-btn">—</span>
+                  <span class="mp-dir-btn mp-dir-active">RTL</span>
+                  <span class="mp-dir-btn">LTR</span>
+                  <span class="mp-dir-btn">تلقائي</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating cards -->
+        <div class="float-card float-card-1">
+          <span class="fc-icon">✨</span>
+          <span class="fc-text">حفظ تلقائي</span>
+        </div>
+        <div class="float-card float-card-2">
+          <span class="fc-icon">🎨</span>
+          <span class="fc-text">3 خطوط عربية</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+  </header>
+
+  <!-- ========== Features ========== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="section-eyebrow">ما يميّز نَسَق</span>
+        <h2 class="section-title">كل ما تحتاجه <span class="gradient-text">في لوحة واحدة</span></h2>
+        <p class="section-sub">أدوات احترافية لمصممي الويب وعشّاق التخصيص والقرّاء الذين يريدون مظهرًا أفضل لأي موقع.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature reveal" data-reveal>
+          <div class="feature-icon feature-icon-1">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 7 4 4 20 4 20 7"/>
+              <line x1="9" x2="15" y1="20" y2="20"/>
+              <line x1="12" x2="12" y1="4" y2="20"/>
+            </svg>
+          </div>
+          <h3>ثلاثة خطوط عربية احترافية</h3>
+          <p>Tajawal، IBM Plex Sans Arabic، وAmiri مدمجة في الإضافة. تعمل بدون إنترنت ودون أي تتبع.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal data-reveal-delay="60">
+          <div class="feature-icon feature-icon-2">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="17 1 21 5 17 9"/>
+              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+              <polyline points="7 23 3 19 7 15"/>
+              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+          </div>
+          <h3>اتجاه الصفحة بكبسة زر</h3>
+          <p>قسم بارز لتبديل اتجاه أي موقع: RTL، LTR، أو تلقائي حسب لغة المحتوى. مثالي للمحتوى العربي.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal data-reveal-delay="120">
+          <div class="feature-icon feature-icon-3">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+              <path d="M13 13l6 6"/>
+            </svg>
+          </div>
+          <h3>اختيار العنصر بالماوس</h3>
+          <p>انقر على أي عنصر في الصفحة لاختياره. خوارزمية ذكية تولّد CSS selector مستقر يقاوم تغيّرات الموقع.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal>
+          <div class="feature-icon feature-icon-4">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3>محرّر CSS كامل</h3>
+          <p>اكتب CSS مخصّص بحرية كاملة. التطبيق فوري على الصفحة دون الحاجة لإعادة تحميل.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal data-reveal-delay="60">
+          <div class="feature-icon feature-icon-5">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+          </div>
+          <h3>حفظ تلقائي بلا أزرار</h3>
+          <p>كل تعديل يُحفظ فورًا. لا تحتاج لزر "حفظ". يظل النمط مُطبَّقًا حتى بعد إعادة فتح المتصفح.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal data-reveal-delay="120">
+          <div class="feature-icon feature-icon-6">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>خصوصية مطلقة</h3>
+          <p>كل البيانات محفوظة محليًا. لا اتصال خارجي، لا تتبّع، لا إعلانات. الكود مفتوح للمراجعة.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal>
+          <div class="feature-icon feature-icon-7">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>لوحة جانبية تبقى مفتوحة</h3>
+          <p>على عكس النوافذ المنبثقة، لوحة نَسَق تظل مفتوحة أثناء تصفّحك بين التبويبات. مرنة وعملية.</p>
+        </article>
+
+        <article class="feature reveal" data-reveal data-reveal-delay="60">
+          <div class="feature-icon feature-icon-8">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </div>
+          <h3>تصدير واستيراد</h3>
+          <p>احفظ كل إعداداتك كملف JSON. انقلها بين أجهزتك أو شاركها مع أصدقائك بسهولة.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== How it works ========== -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="section-eyebrow">في 3 خطوات</span>
+        <h2 class="section-title">سهلة <span class="gradient-text">للجميع</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal" data-reveal>
+          <div class="step-number">1</div>
+          <h3>ثبّت الإضافة</h3>
+          <p>أضف نَسَق إلى متصفّحك من Chrome Web Store أو حمّلها يدويًا من GitHub.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">←</div>
+        <div class="step reveal" data-reveal data-reveal-delay="100">
+          <div class="step-number">2</div>
+          <h3>افتح الموقع المراد تعديله</h3>
+          <p>اضغط أيقونة نَسَق في شريط الأدوات لفتح اللوحة الجانبية على يمين الشاشة.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true">←</div>
+        <div class="step reveal" data-reveal data-reveal-delay="200">
+          <div class="step-number">3</div>
+          <h3>عدّل المظهر</h3>
+          <p>غيّر الخط، الحجم، الألوان، الاتجاه. التغييرات تُطبَّق وتُحفَظ تلقائيًا.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Live demo ========== -->
+  <section class="demo">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="section-eyebrow">معاينة حيّة</span>
+        <h2 class="section-title">جرّب التأثير <span class="gradient-text">بنفسك</span></h2>
+        <p class="section-sub">اختر خطًا واتجاهًا وشاهد النص يتغيّر مباشرة.</p>
+      </div>
+
+      <div class="demo-container reveal" data-reveal>
+        <div class="demo-controls">
+          <div class="demo-control-group">
+            <label>نوع الخط</label>
+            <div class="demo-buttons">
+              <button class="demo-btn demo-btn-active" data-font="Tajawal">Tajawal</button>
+              <button class="demo-btn" data-font="IBM Plex Sans Arabic">IBM Plex</button>
+              <button class="demo-btn" data-font="Amiri">Amiri</button>
+            </div>
+          </div>
+          <div class="demo-control-group">
+            <label>حجم الخط</label>
+            <input type="range" class="demo-range" id="demoSize" min="16" max="48" value="28">
+            <span class="demo-value" id="demoSizeVal">28px</span>
+          </div>
+          <div class="demo-control-group">
+            <label>اتجاه</label>
+            <div class="demo-buttons">
+              <button class="demo-btn demo-btn-active" data-dir="rtl">RTL</button>
+              <button class="demo-btn" data-dir="ltr">LTR</button>
+            </div>
+          </div>
+        </div>
+        <div class="demo-preview">
+          <div class="demo-text" id="demoText" dir="rtl" style="font-family: Tajawal; font-size: 28px;">
+            بسم الله الرحمن الرحيم<br>
+            ﴿إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾<br>
+            <span style="font-size: 0.7em; opacity: 0.7;">جرّب تغيير الخط والحجم والاتجاه</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Screenshots ========== -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <div class="section-head reveal" data-reveal>
+        <span class="section-eyebrow">لقطات</span>
+        <h2 class="section-title">واجهة <span class="gradient-text">احترافية</span></h2>
+      </div>
+      <div class="shots reveal" data-reveal>
+        <div class="shot shot-main">
+          <div class="shot-img">
+            <div class="shot-mockup">
+              <span class="shot-label">اللوحة الجانبية</span>
+            </div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="shot-img">
+            <div class="shot-mockup">
+              <span class="shot-label">صفحة الإعدادات</span>
+            </div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="shot-img">
+            <div class="shot-mockup">
+              <span class="shot-label">محرّر الكود</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Privacy ========== -->
+  <section class="privacy" id="privacy">
+    <div class="container">
+      <div class="privacy-card reveal" data-reveal>
+        <div class="privacy-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h2>الخصوصية أولاً.<br>دائمًا.</h2>
+        <p>نَسَق لا تجمع أي بيانات شخصية. كل الإعدادات محفوظة محليًا على جهازك. لا اتصال بأي خادم خارجي. لا تحليلات. لا تتبّع. لا إعلانات.</p>
+        <div class="trust-badges">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            مفتوح المصدر
+          </span>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Manifest V3
+          </span>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            تخزين محلي
+          </span>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            بلا تتبّع
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Install CTA ========== -->
+  <section class="cta" id="install">
+    <div class="container">
+      <div class="cta-card reveal" data-reveal>
+        <h2>جاهز للتجربة؟</h2>
+        <p>ثبّت نَسَق الآن وابدأ في تخصيص أي موقع كما تحب.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            ثبّت على Chrome
+          </a>
+          <a href="https://github.com" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">
+            تعليمات التثبيت اليدوي
+          </a>
+        </div>
+        <p class="cta-note">مجاني · مفتوح المصدر · يعمل على Chrome و Edge و Brave و Opera</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="nav-logo">
+            <svg viewBox="0 0 32 32" width="32" height="32">
+              <defs>
+                <linearGradient id="footerLogoG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#1E3A8A"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="8" fill="url(#footerLogoG)"/>
+              <circle cx="16" cy="9" r="2.2" fill="#FFFFFF"/>
+              <path d="M8 14 Q8 24 16 24 Q24 24 24 14" stroke="#FFFFFF" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <strong>نَسَق — مُنسّق الويب</strong>
+            <span>تطوير: <strong style="color:var(--primary-light);">شؤون إسلامية</strong></span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#features">المميزات</a>
+          <a href="#how">كيف تستخدمها</a>
+          <a href="#privacy">الخصوصية</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 نَسَق · MIT License</span>
+        <span>صُنع بحبّ للمحتوى العربي</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

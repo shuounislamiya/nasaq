@@ -1,0 +1,20 @@
+{
+  "appName": {
+    "message": "Nasaq — Web Stylist",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Nasaq: Restyle any website. Change fonts, colors, and layout with one click. Three bundled Arabic fonts, full CSS editor, professional royal-blue side panel.",
+    "description": "Extension description"
+  },
+  "actionTitle": {
+    "message": "Nasaq — open style panel",
+    "description": "Action title"
+  },
+  "cmdOpenPanel": {
+    "message": "Open/close the Nasaq panel"
+  },
+  "cmdToggleSite": {
+    "message": "Enable/disable Nasaq on the current site"
+  }
+}
