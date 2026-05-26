@@ -7,25 +7,32 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
 
-# Node (if used later)
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 package-lock.json
 
-# Build artifacts
-dist/
-build/
-*.zip
-nasaq-v*.zip
+# Local-only (not part of published extension)
+/website/
+/store-assets/
+/Logo.jpg
+/apply-logo.py
+/build-icons.py
+/build-og-image.py
+/build-zips.py
+/download-fonts.py
 
 # Logs
 *.log
-
-# Misc
 .cache/
 *.tmp
+
+# Build temp
+*-temp.json
+_*.json

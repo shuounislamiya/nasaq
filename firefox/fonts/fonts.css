@@ -1,0 +1,17 @@
+/* ============================================================
+   Nasaq — Bundled Fonts (3 خطوط عربية فقط)
+   هذا الملف للتوثيق فقط. الإضافة تولّد @font-face ديناميكيًا
+   من content/inject.js للوصول الصحيح إلى chrome-extension://
+   ============================================================
+
+   ملفات الخطوط المطلوبة في هذا المجلد:
+
+     tajawal-400.woff2, tajawal-500.woff2, tajawal-700.woff2
+     ibm-plex-arabic-400.woff2, ibm-plex-arabic-500.woff2, ibm-plex-arabic-700.woff2
+     amiri-400.woff2, amiri-700.woff2
+
+   لإعادة التحميل دفعة واحدة، شغّل:
+     python download-fonts.py
+
+   الترخيص: SIL Open Font License (OFL) 1.1
+   ============================================================ */

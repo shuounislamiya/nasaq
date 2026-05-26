@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إعدادات نَسَق</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">
+        <img src="../icons/icon128.png" alt="نَسَق" width="44" height="44">
+      </div>
+      <div>
+        <h1>إعدادات نَسَق</h1>
+        <p class="sub">إدارة المواقع، تصدير/استيراد، تفضيلات عامة</p>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <div class="by-line">
+        <span class="by-label">تطوير</span>
+        <strong class="by-name">شؤون إسلامية</strong>
+      </div>
+      <div class="version">v1.0.0</div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ Welcome Banner ============ -->
+    <section class="welcome" id="welcomeBanner" hidden>
+      <h2>أهلًا بك في نَسَق 👋</h2>
+      <p>إضافة احترافية لتعديل خطوط أي موقع وتنسيقه. لتجربتها:</p>
+      <ol>
+        <li>افتح أي موقع</li>
+        <li>اضغط على أيقونة نَسَق في شريط الأدوات</li>
+        <li>فعّل الإضافة على الموقع، ثم عدّل الخط أو الألوان</li>
+        <li>استخدم زرّ الاختيار <kbd>⮾</kbd> لاختيار عنصر معيّن</li>
+      </ol>
+      <p><strong>نصيحة:</strong> اضغط <kbd>Alt+Shift+S</kbd> لفتح اللوحة الجانبية بسرعة.</p>
+      <button class="btn-link" id="dismissWelcome">إغلاق هذه الرسالة</button>
+    </section>
+
+    <!-- ============ Tabs ============ -->
+    <nav class="otabs">
+      <button class="otab otab-active" data-otab="sites">المواقع المعدَّلة</button>
+      <button class="otab" data-otab="general">إعدادات عامة</button>
+      <button class="otab" data-otab="backup">النسخ الاحتياطي</button>
+      <button class="otab" data-otab="about">حول</button>
+    </nav>
+
+    <!-- ============ Sites tab ============ -->
+    <section class="opanel" data-opanel="sites">
+      <div class="section-header">
+        <div>
+          <h2>المواقع المعدَّلة</h2>
+          <p class="muted">قائمة المواقع التي طبّقت عليها نَسَق أنماطًا مخصّصة</p>
+        </div>
+        <div class="header-actions">
+          <input type="search" id="siteSearch" class="control" placeholder="ابحث في المواقع…">
+        </div>
+      </div>
+
+      <div class="sites-list" id="sitesList">
+        <div class="empty-state" id="sitesEmpty">
+          <div class="empty-icon">
+            <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="28"/>
+              <line x1="4" y1="32" x2="60" y2="32"/>
+              <path d="M32 4c-8 8-12 18-12 28s4 20 12 28c8-8 12-18 12-28S40 12 32 4z"/>
+            </svg>
+          </div>
+          <h3>لا يوجد مواقع مُعدَّلة بعد</h3>
+          <p>افتح أي موقع وعدّله من اللوحة الجانبية، ثم اضغط حفظ — وسيظهر هنا.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ General tab ============ -->
+    <section class="opanel" data-opanel="general" hidden>
+      <h2>إعدادات عامة</h2>
+
+      <div class="settings-grid">
+        <div class="setting-card">
+          <div class="setting-info">
+            <h3>تفعيل نَسَق كليًا</h3>
+            <p>أوقف الإضافة على كل المواقع مع الاحتفاظ بالأنماط المحفوظة</p>
+          </div>
+          <label class="switch lg">
+            <input type="checkbox" id="globalEnable" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-info">
+            <h3>عرض شارة "ON" على الأيقونة</h3>
+            <p>عرض الحالة بصريًا فوق أيقونة الإضافة في شريط الأدوات</p>
+          </div>
+          <label class="switch lg">
+            <input type="checkbox" id="showBadge" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-info">
+            <h3>الاختصارات</h3>
+            <p>اضبط اختصارات لوحة المفاتيح من إعدادات Chrome</p>
+          </div>
+          <button class="btn btn-secondary" id="btnShortcuts">فتح إعدادات الاختصارات</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Backup tab ============ -->
+    <section class="opanel" data-opanel="backup" hidden>
+      <h2>النسخ الاحتياطي والمزامنة</h2>
+
+      <div class="settings-grid">
+        <div class="setting-card">
+          <div class="setting-info">
+            <h3>تصدير الإعدادات</h3>
+            <p>احفظ كل المواقع والأنماط كملف JSON</p>
+          </div>
+          <button class="btn btn-primary" id="btnExport">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            تصدير JSON
+          </button>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-info">
+            <h3>استيراد إعدادات</h3>
+            <p>استرجع نسخة احتياطية من ملف JSON محفوظ سابقًا</p>
+          </div>
+          <label class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            استيراد JSON
+            <input type="file" id="importFile" accept=".json,application/json" hidden>
+          </label>
+        </div>
+
+        <div class="setting-card disabled">
+          <div class="setting-info">
+            <h3>المزامنة مع Google Drive <span class="badge-soon">قريبًا</span></h3>
+            <p>مزامنة إعداداتك بين أجهزتك تلقائيًا عبر Google Drive</p>
+          </div>
+          <button class="btn btn-secondary" disabled>اربط Google Drive</button>
+        </div>
+
+        <div class="setting-card danger">
+          <div class="setting-info">
+            <h3>مسح كل البيانات</h3>
+            <p>حذف كل المواقع والأنماط والإعدادات نهائيًا. لا يمكن التراجع.</p>
+          </div>
+          <button class="btn btn-danger" id="btnWipe">مسح كل شيء</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ About tab ============ -->
+    <section class="opanel" data-opanel="about" hidden>
+      <h2>حول نَسَق</h2>
+
+      <div class="about-card">
+        <div class="about-logo">
+          <img src="../icons/icon128.png" alt="نَسَق" width="88" height="88" style="border-radius:20px;box-shadow:0 12px 28px rgba(30,64,175,.35);">
+        </div>
+        <h3>نَسَق — مُنسّق الويب</h3>
+        <p class="dev-credit">تطوير: <strong>شؤون إسلامية</strong></p>
+        <p class="version-line">الإصدار 1.0.0</p>
+        <p>إضافة احترافية لتخصيص خطوط ومظهر أي موقع. ثلاثة خطوط عربية مدمجة (Tajawal، IBM Plex Arabic، Amiri)، محرّر CSS كامل، لوحة جانبية لا تغيب.</p>
+
+        <div class="features-grid">
+          <div class="feature">
+            <strong>✓ خطوط عربية مدمجة</strong>
+            <span>Tajawal، IBM Plex Sans Arabic، Amiri</span>
+          </div>
+          <div class="feature">
+            <strong>✓ خصوصية كاملة</strong>
+            <span>كل البيانات محليًا، لا اتصال خارجي</span>
+          </div>
+          <div class="feature">
+            <strong>✓ مفتوح المصدر</strong>
+            <span>كود مفتوح ومقروء للمراجعة</span>
+          </div>
+          <div class="feature">
+            <strong>✓ Manifest V3</strong>
+            <span>يلتزم بأحدث معايير Chrome 2026</span>
+          </div>
+        </div>
+
+        <div class="links">
+          <a href="#" id="lnkPrivacy">سياسة الخصوصية</a>
+          <span class="dot">·</span>
+          <a href="#" id="lnkLicense">الترخيص</a>
+          <span class="dot">·</span>
+          <a href="#" id="lnkSource">الكود المصدري</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" hidden></div>
+
+  <!-- Modal — site styles preview -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <header class="modal-header">
+        <h3 id="modalTitle">—</h3>
+        <button class="iconbtn" id="modalClose">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </header>
+      <div class="modal-body">
+        <pre id="modalCSS"></pre>
+      </div>
+      <footer class="modal-footer">
+        <button class="btn btn-ghost" id="modalCopy">نسخ CSS</button>
+        <button class="btn btn-danger" id="modalDelete">حذف الموقع</button>
+        <button class="btn btn-primary" id="modalEdit">فتح في اللوحة</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

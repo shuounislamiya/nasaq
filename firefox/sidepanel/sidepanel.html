@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nasaq</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">
+        <img src="../icons/icon48.png" alt="نَسَق" width="32" height="32">
+      </div>
+      <h1 class="brand-name">نَسَق</h1>
+    </div>
+
+    <div class="topbar-actions">
+      <div class="site-chip" id="siteChip" title="الموقع الحالي">
+        <img id="favicon" alt="" class="favicon">
+        <span id="currentHost" dir="ltr">—</span>
+      </div>
+      <button class="iconbtn" id="btnOptions" title="الإعدادات" aria-label="الإعدادات">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ Site toggle ============ -->
+  <div class="enable-bar">
+    <label class="enable-row">
+      <span class="enable-text">
+        <strong>تفعيل على هذا الموقع</strong>
+        <span class="enable-sub" id="enableSub">عطّل الأنماط هنا فقط</span>
+      </span>
+      <span class="switch">
+        <input type="checkbox" id="siteToggle">
+        <span class="slider"></span>
+      </span>
+    </label>
+  </div>
+
+  <!-- ============ Selector bar ============ -->
+  <div class="selector-bar">
+    <button class="picker-btn" id="btnPicker" title="اختر عنصرًا من الصفحة">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+        <path d="M13 13l6 6"/>
+      </svg>
+    </button>
+    <input type="text" id="selectorInput" placeholder="CSS selector" dir="ltr" autocomplete="off" spellcheck="false">
+    <button class="iconbtn small" id="btnClearSelector" title="مسح المختار">
+      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- اختصارات سريعة للـ selectors الشائعة -->
+  <div class="quick-selectors">
+    <button class="qsel" data-sel="html, body, body *" title="كل النصوص في الصفحة">كل النصوص</button>
+    <button class="qsel" data-sel="h1, h2, h3, h4, h5, h6" title="العناوين فقط">العناوين</button>
+    <button class="qsel" data-sel="p, li, td, div" title="الفقرات والقوائم">الفقرات</button>
+    <button class="qsel" data-sel="a" title="الروابط فقط">الروابط</button>
+    <button class="qsel" data-sel="input, textarea, button, select" title="حقول الإدخال والأزرار">الحقول</button>
+  </div>
+
+  <!-- ============ Tabs ============ -->
+  <nav class="tabs">
+    <button class="tab tab-active" data-tab="basic">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      Basic
+    </button>
+    <button class="tab" data-tab="code">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+      Code
+    </button>
+  </nav>
+
+  <!-- ============ Tab content ============ -->
+  <main class="panel-body">
+
+    <!-- ============ Basic Tab ============ -->
+    <section class="tab-panel" data-panel="basic">
+
+      <!-- حقول النص الأساسية — بلا عنوان (الإضافة مخصّصة للنصوص أصلاً) -->
+      <div class="group group-headless">
+
+        <div class="field">
+          <label>نوع الخط</label>
+          <select id="fontFamily" class="control select wide">
+            <option value="">— خط الموقع الافتراضي —</option>
+            <optgroup label="خطوط عربية مدمجة" id="optArabic"></optgroup>
+            <optgroup label="خطوط النظام">
+              <option value="system-ui">system-ui</option>
+              <option value="Arial">Arial</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Segoe UI">Segoe UI</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Courier New">Courier New</option>
+            </optgroup>
+            <option value="__custom__">— خط مخصّص من النظام —</option>
+          </select>
+        </div>
+
+        <div class="field" id="customFontField" hidden>
+          <input type="text" id="customFontName" class="control" placeholder="اسم الخط من النظام (مثل: GE SS)">
+        </div>
+
+        <!-- الحجم والارتفاع في سطر واحد -->
+        <div class="row-2">
+          <div class="field">
+            <label>الحجم</label>
+            <select id="fontSize" class="control select">
+              <option value="">— افتراضي —</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="22">22</option>
+              <option value="24">24</option>
+              <option value="26">26</option>
+              <option value="28">28</option>
+              <option value="30">30</option>
+              <option value="32">32</option>
+              <option value="36">36</option>
+              <option value="40">40</option>
+              <option value="48">48</option>
+              <option value="56">56</option>
+              <option value="64">64</option>
+              <option value="72">72</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>الارتفاع</label>
+            <select id="lineHeight" class="control select">
+              <option value="">— افتراضي —</option>
+              <option value="1">1</option>
+              <option value="1.1">1.1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.3">1.3</option>
+              <option value="1.4">1.4</option>
+              <option value="1.5">1.5</option>
+              <option value="1.6">1.6</option>
+              <option value="1.7">1.7</option>
+              <option value="1.8">1.8</option>
+              <option value="1.9">1.9</option>
+              <option value="2">2</option>
+              <option value="2.2">2.2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- سمك الخط -->
+        <div class="field">
+          <label>سمك الخط</label>
+          <select id="fontWeight" class="control select">
+            <option value="">— الافتراضي —</option>
+            <option value="100">100 — رفيع جدًا</option>
+            <option value="300">300 — رفيع</option>
+            <option value="400">400 — عادي</option>
+            <option value="500">500 — متوسط</option>
+            <option value="600">600 — نصف عريض</option>
+            <option value="700">700 — عريض</option>
+            <option value="800">800 — أسود</option>
+            <option value="900">900 — أسود فاتح</option>
+          </select>
+        </div>
+
+        <!-- النمط -->
+        <div class="field">
+          <label>النمط</label>
+          <div class="segmented">
+            <input type="radio" name="fontStyle" id="fs-none" value="">
+            <label for="fs-none">—</label>
+            <input type="radio" name="fontStyle" id="fs-normal" value="normal">
+            <label for="fs-normal">عادي</label>
+            <input type="radio" name="fontStyle" id="fs-italic" value="italic">
+            <label for="fs-italic"><em>مائل</em></label>
+          </div>
+        </div>
+
+        <!-- الزخرفة -->
+        <div class="field">
+          <label>الزخرفة</label>
+          <div class="segmented">
+            <input type="radio" name="textDecoration" id="td-none" value="">
+            <label for="td-none">—</label>
+            <input type="radio" name="textDecoration" id="td-no" value="none">
+            <label for="td-no">بدون</label>
+            <input type="radio" name="textDecoration" id="td-u" value="underline">
+            <label for="td-u" style="text-decoration:underline">A</label>
+            <input type="radio" name="textDecoration" id="td-s" value="line-through">
+            <label for="td-s" style="text-decoration:line-through">A</label>
+            <input type="radio" name="textDecoration" id="td-o" value="overline">
+            <label for="td-o" style="text-decoration:overline">A</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>المحاذاة</label>
+          <div class="segmented">
+            <input type="radio" name="textAlign" id="ta-none" value="">
+            <label for="ta-none">—</label>
+            <input type="radio" name="textAlign" id="ta-r" value="right">
+            <label for="ta-r" title="يمين">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="12" x2="9" y2="12"/><line x1="21" y1="18" x2="6" y2="18"/></svg>
+            </label>
+            <input type="radio" name="textAlign" id="ta-c" value="center">
+            <label for="ta-c" title="وسط">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="18" y1="12" x2="6" y2="12"/><line x1="19" y1="18" x2="5" y2="18"/></svg>
+            </label>
+            <input type="radio" name="textAlign" id="ta-l" value="left">
+            <label for="ta-l" title="يسار">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="18" y1="18" x2="3" y2="18"/></svg>
+            </label>
+            <input type="radio" name="textAlign" id="ta-j" value="justify">
+            <label for="ta-j" title="ضبط">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="12" x2="3" y2="12"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+            </label>
+          </div>
+        </div>
+
+        <!-- شريط اتجاه الموقع — مدمج تحت المحاذاة -->
+        <section class="direction-hero">
+          <span class="direction-label">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="17 1 21 5 17 9"/>
+              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+              <polyline points="7 23 3 19 7 15"/>
+              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+            اتجاه الموقع
+          </span>
+          <div class="direction-buttons">
+            <button class="dir-btn" data-dir="" title="بدون تغيير اتجاه الموقع">—</button>
+            <button class="dir-btn" data-dir="rtl" title="من اليمين لليسار — عربي/عبري">RTL</button>
+            <button class="dir-btn" data-dir="ltr" title="من اليسار لليمين — إنجليزي">LTR</button>
+            <button class="dir-btn" data-dir="auto" title="حسب لغة المحتوى تلقائيًا">تلقائي</button>
+          </div>
+        </section>
+
+        <!-- الألوان — مدمجة في نفس القسم بلا عنوان -->
+        <div class="field">
+          <label>لون النص</label>
+          <div class="color-row">
+            <input type="color" id="textColorPicker" class="color-swatch">
+            <input type="text" id="textColor" class="control mono" placeholder="#000000 أو rgb(…)">
+            <button class="iconbtn small" id="textColorClear" title="مسح">×</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>لون الخلفية</label>
+          <div class="color-row">
+            <input type="color" id="bgColorPicker" class="color-swatch">
+            <input type="text" id="bgColor" class="control mono" placeholder="#FFFFFF أو transparent">
+            <button class="iconbtn small" id="bgColorClear" title="مسح">×</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- التخطيط -->
+      <details class="group" open>
+        <summary class="group-title">
+          <span class="group-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </span>
+          التخطيط
+        </summary>
+
+        <div class="field">
+          <label>الظهور</label>
+          <div class="segmented">
+            <input type="radio" name="visibility" id="vis-none" value="">
+            <label for="vis-none">—</label>
+            <input type="radio" name="visibility" id="vis-show" value="visible">
+            <label for="vis-show">إظهار</label>
+            <input type="radio" name="visibility" id="vis-hide" value="hidden">
+            <label for="vis-hide">إخفاء</label>
+            <input type="radio" name="visibility" id="vis-rm" value="__display_none__">
+            <label for="vis-rm">إزالة</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>العرض</label>
+          <select id="displayMode" class="control select wide">
+            <option value="">—</option>
+            <option value="block">block</option>
+            <option value="inline-block">inline-block</option>
+            <option value="inline">inline</option>
+            <option value="flex">flex</option>
+            <option value="inline-flex">inline-flex</option>
+            <option value="grid">grid</option>
+            <option value="inline-grid">inline-grid</option>
+            <option value="none">none (إزالة)</option>
+          </select>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label>العرض W</label>
+            <input type="text" id="boxWidth" class="control" placeholder="مثل 200px أو 100%">
+          </div>
+          <div class="field">
+            <label>الارتفاع H</label>
+            <input type="text" id="boxHeight" class="control" placeholder="مثل 100px أو auto">
+          </div>
+        </div>
+
+        <div class="boxmodel">
+          <div class="boxmodel-section margin">
+            <span class="boxlabel">Margin</span>
+            <div class="boxinputs">
+              <input type="text" id="marginTop" class="control mini" placeholder="↑">
+              <input type="text" id="marginRight" class="control mini" placeholder="→">
+              <input type="text" id="marginBottom" class="control mini" placeholder="↓">
+              <input type="text" id="marginLeft" class="control mini" placeholder="←">
+            </div>
+          </div>
+          <div class="boxmodel-section padding">
+            <span class="boxlabel">Padding</span>
+            <div class="boxinputs">
+              <input type="text" id="paddingTop" class="control mini" placeholder="↑">
+              <input type="text" id="paddingRight" class="control mini" placeholder="→">
+              <input type="text" id="paddingBottom" class="control mini" placeholder="↓">
+              <input type="text" id="paddingLeft" class="control mini" placeholder="←">
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- الإطار -->
+      <details class="group">
+        <summary class="group-title">
+          <span class="group-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="3"/>
+            </svg>
+          </span>
+          الإطار
+        </summary>
+        <div class="row-2">
+          <div class="field">
+            <label>السُّمك</label>
+            <input type="text" id="borderWidth" class="control" placeholder="1px">
+          </div>
+          <div class="field">
+            <label>النوع</label>
+            <select id="borderStyle" class="control select">
+              <option value="">—</option>
+              <option value="solid">صلب</option>
+              <option value="dashed">متقطع</option>
+              <option value="dotted">منقّط</option>
+              <option value="double">مزدوج</option>
+              <option value="none">بدون</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>لون الإطار</label>
+          <div class="color-row">
+            <input type="color" id="borderColorPicker" class="color-swatch">
+            <input type="text" id="borderColor" class="control mono" placeholder="#000000">
+            <button class="iconbtn small" id="borderColorClear">×</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>الانحناء</label>
+          <input type="text" id="borderRadius" class="control" placeholder="مثل 8px أو 50%">
+        </div>
+      </details>
+
+      <!-- التأثيرات -->
+      <details class="group">
+        <summary class="group-title">
+          <span class="group-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v8m0 4v8m-10-10h8m4 0h8"/>
+            </svg>
+          </span>
+          التأثيرات
+        </summary>
+        <div class="field">
+          <label>الشفافية (Opacity)</label>
+          <input type="range" id="opacity" class="range" min="0" max="1" step="0.05">
+          <span class="range-val" id="opacityVal">—</span>
+        </div>
+        <div class="field">
+          <label>الظل</label>
+          <input type="text" id="boxShadow" class="control" placeholder="مثل 0 4px 12px rgba(0,0,0,.15)">
+        </div>
+        <div class="field">
+          <label>المؤشّر</label>
+          <select id="cursor" class="control select">
+            <option value="">—</option>
+            <option value="default">default</option>
+            <option value="pointer">pointer</option>
+            <option value="text">text</option>
+            <option value="not-allowed">not-allowed</option>
+            <option value="grab">grab</option>
+            <option value="zoom-in">zoom-in</option>
+          </select>
+        </div>
+      </details>
+
+    </section>
+
+    <!-- ============ Code Tab ============ -->
+    <section class="tab-panel" data-panel="code" hidden>
+      <div class="code-header">
+        <div class="code-title">CSS مخصّص لهذا الموقع</div>
+        <div class="code-actions">
+          <button class="iconbtn small" id="btnFormatCSS" title="تنسيق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/>
+            </svg>
+          </button>
+          <button class="iconbtn small" id="btnCopyCSS" title="نسخ">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="editor-wrap">
+        <textarea id="cssEditor" spellcheck="false" autocomplete="off" wrap="off" dir="ltr"
+          placeholder="/* اكتب CSS هنا — سيُطبّق فقط على هذا الموقع */
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+h1, h2, h3 {
+  color: #1E40AF;
+}"></textarea>
+      </div>
+      <p class="code-hint">💡 يُطبّق CSS مباشرة عند الكتابة. القواعد التي تنشئها من تبويب Basic تظهر في الأعلى.</p>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="autosave-indicator" id="autosaveIndicator" aria-live="polite">
+      <span class="autosave-dot"></span>
+      <span class="autosave-text">حفظ تلقائي</span>
+    </div>
+    <button class="btn btn-danger-ghost confirm-btn" id="btnReset"
+            data-default-label="إعادة ضبط الموقع"
+            data-confirm-label="اضغط مرة أخرى للتأكيد"
+            title="حذف كل تنسيقات هذا الموقع وإرجاعه لشكله الأصلي">
+      <svg class="btn-icon-default" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1 4 1 10 7 10"/>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+      </svg>
+      <svg class="btn-icon-confirm" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <span class="btn-label"></span>
+    </button>
+  </footer>
+
+  <!-- إسناد التطوير -->
+  <div class="credit-line">
+    <span>تطوير</span>
+    <strong>شؤون إسلامية</strong>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

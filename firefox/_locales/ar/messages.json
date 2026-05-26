@@ -1,0 +1,20 @@
+{
+  "appName": {
+    "message": "نَسَق — مُنسّق الويب",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "نَسَق: غيّر خطوط أي موقع وألوانه ومظهره بضغطة زر. ثلاثة خطوط عربية مدمجة، محرّر CSS كامل، ولوحة جانبية احترافية بالأزرق الملكي.",
+    "description": "Extension description"
+  },
+  "actionTitle": {
+    "message": "نَسَق — افتح لوحة التنسيق",
+    "description": "Action title"
+  },
+  "cmdOpenPanel": {
+    "message": "فتح/إغلاق لوحة نَسَق"
+  },
+  "cmdToggleSite": {
+    "message": "تفعيل/تعطيل نَسَق على الموقع الحالي"
+  }
+}

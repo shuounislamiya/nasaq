@@ -1,0 +1,33 @@
+Nasaq — Bundled Fonts
+======================
+
+كل الخطوط داخل هذا المجلد مرخّصة بأحد الترخيصين التاليين، وكلاهما مجاني
+ومسموح بإعادة التوزيع التجاري:
+
+━━ SIL Open Font License (OFL) 1.1 ━━
+  - Tajawal           © Boutros International
+  - IBM Plex Sans Arabic © IBM Corporation
+  - Cairo             © Mohamed Gaber & contributors
+  - Noto Naskh Arabic © Google
+  - Amiri             © Khaled Hosny
+  - Readex Pro        © Bonjour Type
+  - Vazirmatn         © Saber Rastikerdar
+  - Markazi Text      © Borna Izadpanah
+  - Inter             © Rasmus Andersson
+  - Open Sans         © Google
+  - Poppins           © Indian Type Foundry
+  - Lato              © Łukasz Dziedzic
+  - JetBrains Mono    © JetBrains s.r.o.
+  - Fira Code         © Nikita Prokopov
+
+  النص الكامل: https://scripts.sil.org/OFL
+
+━━ Apache License 2.0 ━━
+  - Roboto            © Google
+
+  النص الكامل: https://www.apache.org/licenses/LICENSE-2.0
+
+━━ ملاحظات ━━
+- تم تحميل ملفات woff2 من Google Fonts API.
+- جميع الخطوط بصيغة woff2 المضغوطة، تدعم الاستخدام داخل المتصفح.
+- لا تعديل على الخطوط، نسخها الأصلية كما هي من المنشئين.
