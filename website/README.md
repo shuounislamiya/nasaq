@@ -19,7 +19,7 @@ python -m http.server 8000
 ### GitHub Pages
 1. ادفع المستودع إلى GitHub
 2. Settings → Pages → Source → اختر `main` و `/website`
-3. سيكون الموقع متاحًا على: `https://USERNAME.github.io/nasaq/`
+3. سيكون الموقع متاحًا على: `https://shuounislamiya.github.io/nasaq/`
 
 ### Netlify / Vercel
 - اربط المستودع
