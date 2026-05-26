@@ -115,6 +115,11 @@
 .contact-value.mono-num {
   font-family: 'Segoe UI', Tahoma, system-ui, sans-serif;
   letter-spacing: 0;
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: start;
+  display: block;
+  width: fit-content;
 }
 .contact-hint {
   font-size: 12px;
