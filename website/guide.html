@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1E40AF">
+  <title>دليل الاستخدام — نَسَق</title>
+  <meta name="description" content="شرح تفصيلي لكل ميزة في إضافة نَسَق مع تصاميم بصرية: الخط، الحجم، الألوان، الاتجاه، Code، Picker، الحفظ التلقائي، والمزيد.">
+  <link rel="icon" type="image/png" href="../extension/icons/icon128.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="privacy.css">
+  <link rel="stylesheet" href="guide.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-logo">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <defs>
+            <linearGradient id="navLogoG" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3B82F6"/>
+              <stop offset="100%" stop-color="#1E3A8A"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="8" fill="url(#navLogoG)"/>
+          <circle cx="16" cy="9" r="2.2" fill="#FFFFFF"/>
+          <path d="M8 14 Q8 24 16 24 Q24 24 24 14" stroke="#FFFFFF" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="nav-brand-text">نَسَق</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="privacy.html">الخصوصية</a>
+      <a href="contact.html#contact">تواصل</a>
+      <a href="contact.html#support" class="nav-link-support">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        ادعم
+      </a>
+    </div>
+    <div class="nav-cta">
+      <a href="index.html#install" class="btn btn-primary btn-sm">ثبّت الآن</a>
+    </div>
+  </nav>
+
+  <!-- ========== Hero ========== -->
+  <header class="privacy-hero">
+    <div class="container">
+      <div class="privacy-hero-content">
+        <div class="privacy-hero-icon guide-hero-icon">
+          <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <span class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span class="mono-num">10</span> ميزات · شرح تفصيلي · تصاميم بصرية
+        </span>
+        <h1 class="privacy-hero-title">دليل الاستخدام</h1>
+        <p class="privacy-hero-sub">
+          كل وظيفة في نَسَق، مشروحة بالتفصيل
+          <br>
+          مع تصاميم توضيحية لكل عنصر <span class="gradient-text">خطوة بخطوة</span>.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== Guide content ========== -->
+  <main class="privacy-main">
+    <div class="container">
+      <div class="privacy-content">
+
+        <!-- TOC -->
+        <aside class="privacy-toc">
+          <div class="toc-sticky">
+            <h4>المحتويات</h4>
+            <ol>
+              <li><a href="#install">التثبيت والبدء</a></li>
+              <li><a href="#enable">تفعيل الموقع</a></li>
+              <li><a href="#selector">محدّد العنصر</a></li>
+              <li><a href="#picker">أداة الاختيار</a></li>
+              <li><a href="#font">نوع الخط</a></li>
+              <li><a href="#size">الحجم والارتفاع</a></li>
+              <li><a href="#weight">السمك والنمط</a></li>
+              <li><a href="#align">المحاذاة والاتجاه</a></li>
+              <li><a href="#colors">الألوان</a></li>
+              <li><a href="#code">محرّر CSS</a></li>
+              <li><a href="#autosave">الحفظ التلقائي</a></li>
+              <li><a href="#reset">إعادة الضبط</a></li>
+              <li><a href="#settings">صفحة الإعدادات</a></li>
+              <li><a href="#shortcuts">الاختصارات</a></li>
+            </ol>
+          </div>
+        </aside>
+
+        <article class="privacy-article guide-article">
+
+          <!-- 1. التثبيت -->
+          <section id="install" class="article-section guide-section">
+            <h2><span class="num">1</span> التثبيت والبدء</h2>
+            <p>بعد تثبيت الإضافة من Chrome Web Store، اضغط على أيقونة نَسَق <strong>(ن)</strong> في شريط أدوات المتصفّح. ستفتح <strong>اللوحة الجانبية</strong> على يمين الشاشة.</p>
+            <div class="guide-mock guide-mock-toolbar">
+              <span class="mock-browser-tab">www.example.com</span>
+              <div class="mock-toolbar">
+                <span class="mock-icon"></span>
+                <span class="mock-icon"></span>
+                <span class="mock-icon mock-icon-nasaq" title="أيقونة نَسَق">
+                  <svg viewBox="0 0 32 32" width="20" height="20">
+                    <rect width="32" height="32" rx="7" fill="#1E40AF"/>
+                    <circle cx="16" cy="9" r="2.2" fill="#FFFFFF"/>
+                    <path d="M8 14 Q8 24 16 24 Q24 24 24 14" stroke="#FFFFFF" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <span class="mock-pulse"></span>
+                </span>
+                <span class="mock-icon"></span>
+              </div>
+              <span class="mock-arrow">← اضغط هنا</span>
+            </div>
+            <div class="callout callout-info">
+              💡 <strong>نصيحة:</strong> ثبّت أيقونة نَسَق في الشريط دائمًا عبر <code>📌</code> من قائمة الإضافات لتصل إليها أسرع.
+            </div>
+          </section>
+
+          <!-- 2. تفعيل الموقع -->
+          <section id="enable" class="article-section guide-section">
+            <h2><span class="num">2</span> تفعيل الموقع</h2>
+            <p>الإضافة <strong>معطّلة افتراضيًا</strong> على كل المواقع. لتفعيلها على موقع معيّن، اضغط على المفتاح في أعلى اللوحة:</p>
+            <div class="guide-mock guide-mock-enable">
+              <div class="mock-enable-bar">
+                <div>
+                  <strong>تفعيل على هذا الموقع</strong>
+                  <span>الأنماط مطبَّقة على هذا الموقع</span>
+                </div>
+                <span class="mock-switch mock-switch-on">
+                  <span class="mock-knob"></span>
+                </span>
+              </div>
+            </div>
+            <p>بمجرد التفعيل، تظهر شارة <strong>ON</strong> زرقاء على أيقونة الإضافة لتعرف أن الموقع مفعّل. كل التعديلات التي تجريها ستُحفظ خاصةً بهذا الموقع.</p>
+          </section>
+
+          <!-- 3. محدد العنصر -->
+          <section id="selector" class="article-section guide-section">
+            <h2><span class="num">3</span> محدّد العنصر (CSS Selector)</h2>
+            <p>كل تعديل تُجريه يُطبَّق على عنصر معيّن في الصفحة، يُحدَّد عبر <strong>CSS Selector</strong>. الافتراضي هو <code>html, body, body *</code> أي كل النصوص.</p>
+            <div class="guide-mock">
+              <div class="mock-selector-bar">
+                <div class="mock-picker-btn">⮾</div>
+                <div class="mock-selector-input">html, body, body *</div>
+                <div class="mock-clear-btn">×</div>
+              </div>
+              <div class="mock-quick-selectors">
+                <span class="mock-qsel mock-qsel-active">كل النصوص</span>
+                <span class="mock-qsel">العناوين</span>
+                <span class="mock-qsel">الفقرات</span>
+                <span class="mock-qsel">الروابط</span>
+                <span class="mock-qsel">الحقول</span>
+              </div>
+            </div>
+            <p>الأزرار السريعة تحت الحقل تختصر selectors شائعة:</p>
+            <ul class="dot-list">
+              <li><strong>كل النصوص</strong> → كل النص في الصفحة</li>
+              <li><strong>العناوين</strong> → <code>h1, h2, h3, h4, h5, h6</code></li>
+              <li><strong>الفقرات</strong> → <code>p, li, td, div</code></li>
+              <li><strong>الروابط</strong> → <code>a</code></li>
+              <li><strong>الحقول</strong> → <code>input, textarea, button, select</code></li>
+            </ul>
+          </section>
+
+          <!-- 4. أداة الاختيار -->
+          <section id="picker" class="article-section guide-section">
+            <h2><span class="num">4</span> أداة اختيار العنصر بالماوس</h2>
+            <p>بدلًا من كتابة CSS selector يدويًا، اضغط على زر السهم <span class="inline-icon">⮾</span> الأزرق، ثم انقر على أي عنصر في الصفحة. ستحصل على selector دقيق ومستقر تلقائيًا.</p>
+            <div class="guide-mock guide-mock-picker">
+              <div class="mock-page">
+                <div class="mock-highlight">
+                  <span class="mock-tooltip">h1.title · انقر لاختيار · Esc للإلغاء</span>
+                  <h3>عنوان مختار</h3>
+                </div>
+                <p>محتوى الصفحة...</p>
+              </div>
+            </div>
+            <div class="callout callout-success">
+              ✨ <strong>ذكاء خاص:</strong> الخوارزمية تتجنّب الـ class names العشوائية (مثل <code>css-a1b2c3</code>) المولّدة من Tailwind و styled-components، لتُنتج selector ثابت يقاوم تحديثات الموقع.
+            </div>
+          </section>
+
+          <!-- 5. نوع الخط -->
+          <section id="font" class="article-section guide-section">
+            <h2><span class="num">5</span> نوع الخط</h2>
+            <p>اختر من القائمة المنسدلة بين:</p>
+            <div class="guide-mock">
+              <div class="mock-field">
+                <span class="mock-label">نوع الخط</span>
+                <div class="mock-select">
+                  <span>Tajawal — تجوّل</span>
+                  <span class="mock-select-arrow">▼</span>
+                </div>
+              </div>
+            </div>
+            <ul class="dot-list">
+              <li><strong>خط الموقع الافتراضي</strong> — لا تغيير</li>
+              <li><strong>خطوط عربية مدمجة</strong>:
+                <ul style="margin-top:8px;">
+                  <li>Tajawal — حديث، مرئي، متعدد الاستخدامات</li>
+                  <li>IBM Plex Sans Arabic — احترافي، مناسب للنصوص الطويلة</li>
+                  <li>Amiri — كلاسيكي بـ Naskh، مثالي للنصوص الدينية والأدبية</li>
+                </ul>
+              </li>
+              <li><strong>خطوط النظام</strong> — Tahoma, Segoe UI, Arial, Georgia, إلخ</li>
+              <li><strong>خط مخصّص من النظام</strong> — اكتب اسم أي خط مثبّت على جهازك (مثلاً "GE SS")</li>
+            </ul>
+          </section>
+
+          <!-- 6. الحجم والارتفاع -->
+          <section id="size" class="article-section guide-section">
+            <h2><span class="num">6</span> الحجم وارتفاع السطر</h2>
+            <p>قائمتان منسدلتان جنبًا إلى جنب لاختيار حجم الخط (px) وارتفاع السطر:</p>
+            <div class="guide-mock">
+              <div class="mock-row-2">
+                <div class="mock-field mock-field-inline">
+                  <span class="mock-label">الحجم</span>
+                  <div class="mock-select"><span>20</span><span class="mock-select-arrow">▼</span></div>
+                </div>
+                <div class="mock-field mock-field-inline">
+                  <span class="mock-label">الارتفاع</span>
+                  <div class="mock-select"><span>1.8</span><span class="mock-select-arrow">▼</span></div>
+                </div>
+              </div>
+            </div>
+            <p>القيم الجاهزة: من <code class="mono-num">10</code> إلى <code class="mono-num">72</code> px للحجم، ومن <code class="mono-num">1</code> إلى <code class="mono-num">3</code> للارتفاع. لو اخترت "افتراضي"، تُحذف الخاصية من النمط تلقائيًا.</p>
+          </section>
+
+          <!-- 7. السمك والنمط -->
+          <section id="weight" class="article-section guide-section">
+            <h2><span class="num">7</span> سمك الخط، النمط، الزخرفة</h2>
+            <p><strong>سمك الخط</strong>: قائمة منسدلة من 100 (رفيع جدًا) إلى 900 (أسود).</p>
+            <p><strong>النمط</strong>: عادي أو مائل.</p>
+            <p><strong>الزخرفة</strong>: بدون، تحته خط، مشطوب، فوقه خط.</p>
+            <div class="guide-mock">
+              <div class="mock-field">
+                <span class="mock-label">النمط</span>
+                <div class="mock-segmented">
+                  <span class="mock-seg">—</span>
+                  <span class="mock-seg mock-seg-active">عادي</span>
+                  <span class="mock-seg"><em>مائل</em></span>
+                </div>
+              </div>
+              <div class="mock-field">
+                <span class="mock-label">الزخرفة</span>
+                <div class="mock-segmented">
+                  <span class="mock-seg">—</span>
+                  <span class="mock-seg">بدون</span>
+                  <span class="mock-seg" style="text-decoration:underline">A</span>
+                  <span class="mock-seg mock-seg-active" style="text-decoration:line-through">A</span>
+                  <span class="mock-seg" style="text-decoration:overline">A</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8. المحاذاة والاتجاه -->
+          <section id="align" class="article-section guide-section">
+            <h2><span class="num">8</span> المحاذاة واتجاه الموقع</h2>
+            <p><strong>المحاذاة</strong>: يمين، وسط، يسار، ضبط (justify).</p>
+            <div class="guide-mock">
+              <div class="mock-field">
+                <span class="mock-label">المحاذاة</span>
+                <div class="mock-segmented">
+                  <span class="mock-seg">—</span>
+                  <span class="mock-seg mock-seg-active">≡</span>
+                  <span class="mock-seg">≡</span>
+                  <span class="mock-seg">≡</span>
+                  <span class="mock-seg">≡</span>
+                </div>
+              </div>
+              <div class="mock-direction-bar">
+                <span class="mock-dir-label">🎯 اتجاه الموقع</span>
+                <div class="mock-dir-btns">
+                  <span class="mock-dir-btn">—</span>
+                  <span class="mock-dir-btn mock-dir-active">RTL</span>
+                  <span class="mock-dir-btn">LTR</span>
+                  <span class="mock-dir-btn">تلقائي</span>
+                </div>
+              </div>
+            </div>
+            <p><strong>اتجاه الموقع</strong> ميزة استراتيجية — قسم بارز يطبّق على <code>html, body</code> مباشرة (بغض النظر عن selector المختار):</p>
+            <ul class="dot-list">
+              <li><strong>—</strong>: بدون تغيير</li>
+              <li><strong>RTL</strong>: من اليمين لليسار — مثالي للعربية</li>
+              <li><strong>LTR</strong>: من اليسار لليمين</li>
+              <li><strong>تلقائي</strong>: حسب لغة المحتوى (مع <code>unicode-bidi: plaintext</code> لضمان عرض النصوص المختلطة بشكل صحيح)</li>
+            </ul>
+          </section>
+
+          <!-- 9. الألوان -->
+          <section id="colors" class="article-section guide-section">
+            <h2><span class="num">9</span> الألوان</h2>
+            <p>لون النص ولون الخلفية بحقل لكل واحد. كل حقل يحوي:</p>
+            <div class="guide-mock">
+              <div class="mock-field">
+                <span class="mock-label">لون النص</span>
+                <div class="mock-color-row">
+                  <div class="mock-color-swatch" style="background:#1E40AF;"></div>
+                  <div class="mock-color-input">#1E40AF</div>
+                  <div class="mock-color-clear">×</div>
+                </div>
+              </div>
+              <div class="mock-field">
+                <span class="mock-label">لون الخلفية</span>
+                <div class="mock-color-row">
+                  <div class="mock-color-swatch" style="background:#FFFBEB;"></div>
+                  <div class="mock-color-input">#FFFBEB</div>
+                  <div class="mock-color-clear">×</div>
+                </div>
+              </div>
+            </div>
+            <ul class="dot-list">
+              <li><strong>منتقي اللون</strong> (المربع الملوّن) → افتح لوحة الألوان واختر بصريًا</li>
+              <li><strong>حقل النص</strong> → اكتب أي قيمة CSS: <code>#FF0000</code>، <code>rgb(255,0,0)</code>، <code>rgba(...)</code>، <code>transparent</code></li>
+              <li><strong>زر ×</strong> → مسح اللون والعودة للأصلي</li>
+            </ul>
+          </section>
+
+          <!-- 10. محرر الكود -->
+          <section id="code" class="article-section guide-section">
+            <h2><span class="num">10</span> محرّر CSS الكامل</h2>
+            <p>للمتقدّمين: تبويب <strong>Code</strong> يفتح محرّرًا داكنًا لكتابة CSS مخصّص حر.</p>
+            <div class="guide-mock guide-mock-code">
+              <div class="mock-code-tabs">
+                <span>Basic</span>
+                <span class="mock-code-tab-active">Code</span>
+              </div>
+              <div class="mock-code-editor">
+                <pre class="mock-code-content"><span class="c-sel">body</span> {
+  <span class="c-prop">font-family</span>: <span class="c-val">'Tajawal'</span>;
+  <span class="c-prop">background</span>: <span class="c-val">#FFFBEB</span>;
+}
+
+<span class="c-sel">h1, h2, h3</span> {
+  <span class="c-prop">color</span>: <span class="c-val">#1E40AF</span>;
+}</pre>
+              </div>
+            </div>
+            <p>التطبيق فوري عند الكتابة، والكود يُحفظ تلقائيًا. الزر <strong>📋</strong> ينسخ كل CSS، والزر <strong>≡</strong> يُنسّق الكود.</p>
+          </section>
+
+          <!-- 11. الحفظ التلقائي -->
+          <section id="autosave" class="article-section guide-section">
+            <h2><span class="num">11</span> الحفظ التلقائي</h2>
+            <p>لا يوجد زر "حفظ". كل تعديل يُحفظ <strong>تلقائيًا</strong> خلال 400ms من التغيير. مؤشّر صغير في الفوتر يعرض الحالة:</p>
+            <div class="guide-mock guide-mock-autosave">
+              <div class="mock-autosave">
+                <span class="mock-autosave-dot mock-autosave-saved"></span>
+                <span>محفوظ</span>
+              </div>
+              <div class="mock-autosave">
+                <span class="mock-autosave-dot mock-autosave-saving"></span>
+                <span>جاري الحفظ…</span>
+              </div>
+            </div>
+            <p>القيمة الفارغة (مثل "افتراضي") تحذف الخاصية تلقائيًا من النمط، فلا تتراكم خصائص فارغة.</p>
+          </section>
+
+          <!-- 12. إعادة الضبط -->
+          <section id="reset" class="article-section guide-section">
+            <h2><span class="num">12</span> إعادة ضبط الموقع</h2>
+            <p>زر <strong>"إعادة ضبط الموقع"</strong> في الفوتر يحذف كل تنسيقات الموقع الحالي. يحتاج <strong>نقرتين للتأكيد</strong>:</p>
+            <div class="guide-mock guide-mock-reset">
+              <div class="mock-reset-step">
+                <span class="mock-step-label">النقرة الأولى</span>
+                <button class="mock-reset-btn">↻ إعادة ضبط الموقع</button>
+              </div>
+              <span class="mock-arrow-down">↓</span>
+              <div class="mock-reset-step">
+                <span class="mock-step-label">يتحوّل إلى</span>
+                <button class="mock-reset-btn mock-reset-confirm">⚠ اضغط مرة أخرى للتأكيد</button>
+              </div>
+              <span class="mock-arrow-down">↓</span>
+              <div class="mock-reset-step">
+                <span class="mock-step-label">النقرة الثانية خلال 3 ثوانٍ</span>
+                <span class="mock-step-result">✅ تم حذف كل التنسيقات</span>
+              </div>
+            </div>
+            <p>لو لم تضغط النقرة الثانية خلال 3 ثوانٍ، أو ضغطت في أي مكان آخر، يلغى التأكيد ويعود الزر طبيعيًا.</p>
+          </section>
+
+          <!-- 13. صفحة الإعدادات -->
+          <section id="settings" class="article-section guide-section">
+            <h2><span class="num">13</span> صفحة الإعدادات</h2>
+            <p>الزر <strong>⚙</strong> أعلى اللوحة يفتح صفحة الإعدادات بأربعة تبويبات:</p>
+            <div class="guide-mock guide-mock-tabs">
+              <span class="mock-tab mock-tab-active">المواقع المعدَّلة</span>
+              <span class="mock-tab">إعدادات عامة</span>
+              <span class="mock-tab">النسخ الاحتياطي</span>
+              <span class="mock-tab">حول</span>
+            </div>
+            <ul class="dot-list">
+              <li><strong>المواقع المعدَّلة</strong>: قائمة بكل المواقع التي طبّقت عليها أنماطًا، مع بحث، عرض CSS، تفعيل/تعطيل، حذف</li>
+              <li><strong>إعدادات عامة</strong>: تفعيل/تعطيل الإضافة كليًا، إعدادات الشارة، الاختصارات</li>
+              <li><strong>النسخ الاحتياطي</strong>: تصدير كل الإعدادات كملف JSON، استيراد ملف، مسح كل البيانات</li>
+              <li><strong>حول</strong>: معلومات الإصدار، الترخيص، التطوير</li>
+            </ul>
+          </section>
+
+          <!-- 14. الاختصارات -->
+          <section id="shortcuts" class="article-section guide-section">
+            <h2><span class="num">14</span> اختصارات لوحة المفاتيح</h2>
+            <p>للوصول الأسرع، يمكنك استخدام:</p>
+            <div class="guide-mock">
+              <div class="mock-shortcut">
+                <kbd>Alt</kbd> <span>+</span> <kbd>Shift</kbd> <span>+</span> <kbd>S</kbd>
+                <span class="mock-shortcut-desc">فتح/إغلاق اللوحة الجانبية</span>
+              </div>
+              <div class="mock-shortcut">
+                <kbd>Alt</kbd> <span>+</span> <kbd>Shift</kbd> <span>+</span> <kbd>D</kbd>
+                <span class="mock-shortcut-desc">تفعيل/تعطيل على الموقع الحالي</span>
+              </div>
+            </div>
+            <p>يمكنك تغيير هذه الاختصارات من <code>chrome://extensions/shortcuts</code> أو عبر زر "فتح إعدادات الاختصارات" في تبويب الإعدادات العامة.</p>
+          </section>
+
+          <!-- خاتمة -->
+          <section class="article-final">
+            <div class="final-card">
+              <h3>جاهز للتجربة؟</h3>
+              <p>ابدأ بتغيير خط أحد مواقعك المفضّلة، وستلاحظ الفرق فورًا.</p>
+              <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                <a href="index.html#install" class="btn btn-primary">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  ثبّت نَسَق
+                </a>
+                <a href="contact.html#contact" class="btn btn-ghost" style="background:rgba(255,255,255,0.1); color:white; border-color:rgba(255,255,255,0.3);">
+                  لديك سؤال؟
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="nav-logo">
+            <svg viewBox="0 0 32 32" width="32" height="32">
+              <defs>
+                <linearGradient id="footerLogoG" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3B82F6"/>
+                  <stop offset="100%" stop-color="#1E3A8A"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="8" fill="url(#footerLogoG)"/>
+              <circle cx="16" cy="9" r="2.2" fill="#FFFFFF"/>
+              <path d="M8 14 Q8 24 16 24 Q24 24 24 14" stroke="#FFFFFF" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <strong>نَسَق — مُنسّق الويب</strong>
+            <span>تطوير: <strong style="color:var(--primary-light);">شؤون إسلامية</strong></span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="guide.html">دليل الاستخدام</a>
+          <a href="privacy.html">الخصوصية</a>
+          <a href="contact.html#contact">تواصل</a>
+          <a href="contact.html#support">ادعم</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="mono-num">2026</span> نَسَق · MIT License</span>
+        <span>صُنع بحبّ للمحتوى العربي</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

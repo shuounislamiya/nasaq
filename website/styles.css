@@ -198,6 +198,36 @@ img { max-width: 100%; height: auto; }
 }
 .nav-links a:hover::after { width: 100%; }
 
+/* رابط "ادعم" مميّز بقلب نابض */
+.nav-link-support {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  color: #DC2626 !important;
+  font-weight: 800 !important;
+  padding: 4px 10px;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FEF2F2, #FEE2E2);
+  transition: all 200ms;
+}
+.nav-link-support svg {
+  animation: heart-throb 1.2s ease-in-out infinite;
+}
+.nav-link-support:hover {
+  background: linear-gradient(135deg, #DC2626, #B91C1C) !important;
+  color: white !important;
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+}
+.nav-link-support::after { display: none !important; }
+@keyframes heart-throb {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.25); }
+  30% { transform: scale(1); }
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
 }

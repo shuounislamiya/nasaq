@@ -1,0 +1,646 @@
+/* ============================================================
+   نَسَق — Guide Page Styles
+   تصاميم بصرية مدمجة لشرح كل ميزة
+   ============================================================ */
+
+.guide-hero-icon {
+  animation: book-flip 4s ease-in-out infinite;
+}
+@keyframes book-flip {
+  0%, 100% { transform: rotateY(0); }
+  50% { transform: rotateY(15deg); }
+}
+
+.guide-article .article-section {
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px dashed var(--border);
+}
+.guide-article .article-section:last-of-type {
+  border-bottom: none;
+}
+
+.inline-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--gradient);
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+/* ============================================================
+   Generic mock container — حاوية التصاميم البصرية
+   ============================================================ */
+
+.guide-mock {
+  margin: 20px 0 24px;
+  padding: 24px;
+  background: linear-gradient(135deg, #F8FAFC, #EFF6FF);
+  border: 1px dashed var(--primary-lighter);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+.guide-mock::after {
+  content: 'تصميم توضيحي';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   Mock: شريط أدوات المتصفّح
+   ============================================================ */
+
+.guide-mock-toolbar {
+  background: linear-gradient(180deg, #E2E8F0, #CBD5E1);
+  border: 1px solid #94A3B8;
+  padding: 14px 18px;
+}
+.guide-mock-toolbar::after { color: #64748B; }
+.mock-browser-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: white;
+  border-radius: 6px;
+  font: 500 12px var(--font-mono);
+  color: #475569;
+  margin-bottom: 10px;
+  direction: ltr;
+}
+.mock-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.mock-icon {
+  width: 28px;
+  height: 28px;
+  background: #F1F5F9;
+  border-radius: 6px;
+}
+.mock-icon-nasaq {
+  background: transparent !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mock-pulse {
+  position: absolute;
+  inset: -4px;
+  border: 2px solid #3B82F6;
+  border-radius: 10px;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+.mock-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: #DC2626;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+/* ============================================================
+   Mock: شريط التفعيل
+   ============================================================ */
+
+.mock-enable-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+  border: 1px solid var(--primary-lighter);
+  border-radius: var(--radius-sm);
+}
+.mock-enable-bar strong {
+  display: block;
+  font-size: 13px;
+  color: var(--primary-dark);
+  margin-bottom: 2px;
+}
+.mock-enable-bar span {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.mock-switch {
+  width: 40px;
+  height: 22px;
+  background: var(--border-strong);
+  border-radius: 999px;
+  position: relative;
+  display: inline-block;
+}
+.mock-switch-on { background: var(--primary); }
+.mock-knob {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: transform 200ms;
+}
+.mock-switch-on .mock-knob { transform: translateX(-18px); }
+
+/* ============================================================
+   Mock: شريط الـ selector
+   ============================================================ */
+
+.mock-selector-bar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.mock-picker-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient);
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.mock-selector-input {
+  flex: 1;
+  height: 32px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font: 12px var(--font-mono);
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  direction: ltr;
+}
+.mock-clear-btn {
+  width: 28px;
+  height: 28px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.mock-quick-selectors {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.mock-qsel {
+  padding: 4px 10px;
+  background: #F1F5F9;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.mock-qsel-active {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+}
+
+/* ============================================================
+   Mock: picker على الصفحة
+   ============================================================ */
+
+.guide-mock-picker {
+  padding: 0;
+  background: white;
+  border-style: solid;
+}
+.guide-mock-picker::after { display: none; }
+.mock-page {
+  padding: 30px;
+  background: white;
+  border-radius: var(--radius);
+  position: relative;
+}
+.mock-highlight {
+  position: relative;
+  background: rgba(30, 64, 175, 0.15);
+  border: 2px solid #1E40AF;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
+.mock-highlight h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text);
+}
+.mock-tooltip {
+  position: absolute;
+  top: -32px;
+  right: 0;
+  background: #1E40AF;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font: 600 11px var(--font-mono);
+  white-space: nowrap;
+  direction: ltr;
+  text-align: left;
+}
+.mock-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 12px;
+  border: 5px solid transparent;
+  border-top-color: #1E40AF;
+  border-bottom: 0;
+}
+.mock-page p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ============================================================
+   Mock: الحقول العامة
+   ============================================================ */
+
+.mock-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mock-field-inline { flex: 1; }
+.mock-label {
+  flex: 0 0 70px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+.mock-select {
+  flex: 1;
+  height: 34px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+}
+.mock-select-arrow {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+.mock-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mock-segmented {
+  flex: 1;
+  display: flex;
+  gap: 3px;
+  background: #F1F5F9;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+}
+.mock-seg {
+  flex: 1;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: transparent;
+}
+.mock-seg-active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   Mock: شريط الاتجاه
+   ============================================================ */
+
+.mock-direction-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+  border: 1px solid var(--primary-lighter);
+  border-radius: 8px;
+}
+.mock-dir-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+.mock-dir-btns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  flex: 1;
+}
+.mock-dir-btn {
+  height: 26px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-soft);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.mock-dir-active {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+}
+
+/* ============================================================
+   Mock: حقل الألوان
+   ============================================================ */
+
+.mock-color-row {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.mock-color-swatch {
+  width: 36px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.mock-color-input {
+  flex: 1;
+  height: 32px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font: 11px var(--font-mono);
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  direction: ltr;
+}
+.mock-color-clear {
+  width: 28px;
+  height: 28px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Mock: محرّر الكود
+   ============================================================ */
+
+.guide-mock-code {
+  padding: 0;
+  background: white;
+  overflow: hidden;
+}
+.guide-mock-code::after { display: none; }
+.mock-code-tabs {
+  display: flex;
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--border);
+}
+.mock-code-tabs span {
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: default;
+}
+.mock-code-tab-active {
+  color: var(--primary) !important;
+  border-bottom: 2px solid var(--primary);
+}
+.mock-code-editor {
+  background: #0F172A;
+  padding: 18px;
+}
+.mock-code-content {
+  color: #E2E8F0;
+  font: 13px/1.7 var(--font-mono);
+  margin: 0;
+  direction: ltr;
+  text-align: left;
+}
+.mock-code-content .c-sel { color: #60A5FA; font-weight: 600; }
+.mock-code-content .c-prop { color: #C084FC; }
+.mock-code-content .c-val { color: #34D399; }
+
+/* ============================================================
+   Mock: مؤشر الحفظ التلقائي
+   ============================================================ */
+
+.guide-mock-autosave {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+}
+.mock-autosave {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+.mock-autosave-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+.mock-autosave-saved { background: #10B981; }
+.mock-autosave-saving {
+  background: #F59E0B;
+  animation: pulse-saving 0.8s ease infinite;
+}
+@keyframes pulse-saving {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+}
+
+/* ============================================================
+   Mock: التأكيد بنقرتين
+   ============================================================ */
+
+.guide-mock-reset {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.mock-reset-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.mock-step-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.mock-reset-btn {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 8px;
+  color: #DC2626;
+  font: 700 12px var(--font-ui);
+}
+.mock-reset-confirm {
+  background: #EF4444;
+  color: white;
+  border-color: transparent;
+  animation: confirm-pulse-mock 1s ease-in-out infinite;
+}
+@keyframes confirm-pulse-mock {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+.mock-arrow-down {
+  font-size: 20px;
+  color: var(--text-dim);
+}
+.mock-step-result {
+  padding: 8px 18px;
+  background: #10B981;
+  color: white;
+  border-radius: 8px;
+  font: 700 12px var(--font-ui);
+}
+
+/* ============================================================
+   Mock: تبويبات صفحة الإعدادات
+   ============================================================ */
+
+.guide-mock-tabs {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px;
+  background: white;
+}
+.mock-tab {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font: 700 12px var(--font-ui);
+  color: var(--text-muted);
+  background: transparent;
+}
+.mock-tab-active {
+  color: var(--primary);
+  background: var(--surface-soft);
+  position: relative;
+}
+.mock-tab-active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Mock: اختصارات لوحة المفاتيح
+   ============================================================ */
+
+.mock-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mock-shortcut kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 10px;
+  background: white;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  font: 700 12px var(--font-mono);
+  color: var(--text);
+  box-shadow: 0 1px 0 var(--border-strong);
+}
+.mock-shortcut > span:not(.mock-shortcut-desc) {
+  color: var(--text-dim);
+  font-weight: 700;
+}
+.mock-shortcut-desc {
+  margin-inline-start: 12px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
