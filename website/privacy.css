@@ -23,19 +23,23 @@
 .privacy-hero-content {
   max-width: 760px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }
 
 .privacy-hero-icon {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
-  height: 96px;
+  width: 88px;
+  height: 88px;
   background: var(--gradient);
   color: white;
   border-radius: var(--radius-lg);
   box-shadow: 0 16px 40px rgba(30, 64, 175, 0.35);
-  margin-bottom: 28px;
+  margin-bottom: 0;
   animation: shield-pulse 3s ease-in-out infinite;
 }
 @keyframes shield-pulse {
@@ -44,25 +48,28 @@
 }
 
 .privacy-hero-title {
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(32px, 4vw, 44px);
   font-weight: 800;
-  letter-spacing: -1px;
-  margin: 18px 0 18px;
-  line-height: 1.15;
+  letter-spacing: -0.8px;
+  margin: 6px 0 6px;
+  line-height: 1.2;
   background: var(--gradient-text);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 4s ease infinite;
+  text-align: center;
+  padding-bottom: 6px;
 }
 
 .privacy-hero-sub {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--text-soft);
   line-height: 1.85;
   max-width: 640px;
   margin: 0 auto;
+  text-align: center;
 }
 .privacy-hero-sub strong { color: var(--primary); }
 
