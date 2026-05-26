@@ -10,15 +10,7 @@ desktop.ini
 *.swo
 *~
 
-# Python (for local dev scripts)
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-venv/
-env/
-
-# Node
+# Node (if used later)
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -33,12 +25,6 @@ nasaq-v*.zip
 
 # Logs
 *.log
-
-# Local-only assets (not part of the published extension)
-/website/
-/store-assets/
-/build-icons.py
-/download-fonts.py
 
 # Misc
 .cache/
