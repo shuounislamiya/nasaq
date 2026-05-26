@@ -8,7 +8,49 @@ document.addEventListener('DOMContentLoaded', () => {
   setupReveal();
   setupCountUp();
   setupDemo();
+  setupMobileNav();
 });
+
+/* ============================================================
+   Mobile nav toggle (hamburger)
+   ============================================================ */
+
+function setupMobileNav() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // اغلق القائمة عند الضغط على رابط
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // اغلق عند الضغط خارج القائمة
+  document.addEventListener('click', (e) => {
+    if (!links.contains(e.target) && !toggle.contains(e.target)) {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // اغلق عند Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links.classList.contains('is-open')) {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+}
 
 /* ============================================================
    Reveal on scroll (IntersectionObserver)

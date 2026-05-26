@@ -228,8 +228,98 @@ img { max-width: 100%; height: auto; }
   30% { transform: scale(1); }
 }
 
-@media (max-width: 768px) {
-  .nav-links { display: none; }
+/* nav-cta — يحوي زر التثبيت + hamburger */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* زر hamburger — مخفي على الديسكتوب */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: all 200ms;
+}
+.nav-toggle:hover {
+  background: var(--surface-soft);
+  color: var(--primary);
+  border-color: var(--primary-lighter);
+}
+
+/* ============ Mobile menu ============ */
+@media (max-width: 860px) {
+  .nav { padding: 12px 16px; flex-wrap: wrap; }
+
+  .nav-install-btn {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 12px;
+    left: 12px;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    box-shadow: var(--shadow-lg);
+    margin-top: 8px;
+    z-index: 60;
+  }
+  .nav-links.is-open {
+    display: flex;
+    animation: nav-drop 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @keyframes nav-drop {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .nav-links a {
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+  }
+  .nav-links a::after { display: none !important; }
+  .nav-links a:hover {
+    background: var(--surface-soft);
+  }
+
+  /* رابط ادعم في موبايل: شكل عادي مع لون مميز */
+  .nav-links .nav-link-support {
+    margin-top: 6px;
+    border-top: 1px dashed var(--border);
+    padding-top: 14px;
+    border-radius: 0;
+    background: transparent !important;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    color: #DC2626 !important;
+    justify-content: flex-start;
+  }
+  .nav-links .nav-link-support:hover {
+    background: #FEF2F2 !important;
+    color: #DC2626 !important;
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 /* ============================================================
